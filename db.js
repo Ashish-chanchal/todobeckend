@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-
-mongoose.connect('mongodb+srv://myAtlasDBUser:6H7gCtwfV7PIqIJh@myclusterdatafortesting.fw5nw.mongodb.net/todos');
+require('dotenv').config();
+mongoose.connect(process.env.MONGODB_URI);
 
 const todoSchema = new mongoose.Schema({
     title: String,
